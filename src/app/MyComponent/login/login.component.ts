@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+
 import { UserService } from 'src/app/bookstoreservice/user.service';
 
 @Component({
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  submitTestLoginStatus() {
+  submitTestLoginStatus() {   
     this.userService.getloginStatus(this.email, this.password).subscribe((getData: any) => {
       this.status = getData;
     });

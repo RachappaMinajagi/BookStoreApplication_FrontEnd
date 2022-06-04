@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  ContinueUserRecordById(userId: any, user: any) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http:HttpClient) {
    }
@@ -47,10 +50,10 @@ export class UserService {
     const params = new HttpParams()
                 .set('email', email)
                 .set('password', password);
-    return this.http.post("http://localhost:8080/user/forgotpassword", params);
+    return this.http.post("http://localhost:8095/user/forgotpassword", params);
   }
 
   updateUserRecordById(Id:any,user:any){
-    return this.http.put("http://localhost:8080/user/update/"+Id,user);
+    return this.http.put("http://localhost:8095/user/update/"+Id,user);
   }
 }

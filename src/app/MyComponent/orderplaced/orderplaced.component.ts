@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { window } from 'rxjs';
 import { OrderService } from 'src/app/bookstoreservice/order.service';
 import { UserService } from 'src/app/bookstoreservice/user.service';
@@ -36,10 +37,10 @@ export class OrderplacedComponent implements OnInit {
     this.router.navigate(["home",this.token]);
 
   }
-  ngOnDestroy() {
-    for (let i = 0; i < this.orders.data.length; i++) {
-      this.orderService.deleteOrderRecordById(this.orders.data[i].orderID).subscribe(data => {
-      });
-    }
-  }
+  // ngOnDestroy() {
+  //   for (let i = 0; i < this.order.data.length; i++) {
+  //     this.orderService.deleteOrderRecordById(this.order.data[i].orderID).subscribe(data => {
+  //     });
+  //   }
+  // }
 }

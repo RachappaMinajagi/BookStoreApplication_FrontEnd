@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { CartService } from 'src/app/bookstoreservice/cart.service';
 import { OrderService } from 'src/app/bookstoreservice/order.service';
 import { OrderModel } from 'src/app/Model/order-model';
@@ -40,12 +41,12 @@ export class OrdersummeryComponent implements OnInit {
   // It stores the data of the books from the cart and saves it to the database and then routes to the home component
   checkout() {
     for (let i = 0; i < this.cart.data.length; i++) {
-      this.order.userId = 12;
+      this.order.userId = 1;
       this.order.bookId = this.cart.data[i].book.bookId;
       this.order.quantity = this.cart.data[i].quantity;
       this.order.price = this.cart.data[i].book.price*this.order.quantity;
-      console.log("The totel price  ",this.order.price)
-      this.order.address = "ward number 05. jabalpur";
+      console.log("The total price  ", this.order.price)
+      this.order.address = "ward number 05. Gadag";
       this.order.cancel = false;
       this.orderService.postOrder(this.order).subscribe((getData: any) => {
         this.order = getData;
